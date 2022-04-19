@@ -1,0 +1,519 @@
+/*/ Prefix /*/
+/**************************************************************************/
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  color: #fff;
+}
+
+/**************************************************************************/
+/*/ Index /*/
+/**************************************************************************/
+/******************************************************************/
+.background-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  display: inline-block;
+  z-index: -1;
+}
+.background-image img {
+  width: 100%;
+  height: 100vh;
+  filter: blur(5px);
+}
+.background-image::after {
+  content: "";
+  background: #154295;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.6;
+}
+
+/******************************************************************/
+/*****************************************************************/
+.content {
+  width: 75%;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 5%;
+  overflow: hidden;
+}
+.content .contact-bar {
+  height: 4rem;
+  background: #154295;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+.content .contact-bar div {
+  display: flex;
+  align-items: center;
+}
+.content .contact-bar div svg {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 0.5rem 0 0;
+}
+.content .title-image img {
+  width: 100%;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+.content .select-language h2 {
+  text-align: center;
+  font-size: 2em;
+}
+.content .select-language .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem 0;
+}
+.content .select-language .buttons button {
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 1.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.content .select-language .buttons button img {
+  width: 100%;
+  height: 100%;
+}
+.content .select-language .buttons .active {
+  border: 0.15rem solid #f5f5f5;
+  box-shadow: 1px 1px 10px #c4c4c4;
+}
+.content h1.title {
+  font-size: 2.75em;
+  text-align: center;
+}
+.content h2.title {
+  font-size: 2.5em;
+  text-align: center;
+}
+.content .article {
+  margin: 2rem 0;
+}
+.content .article .title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.content .article .title svg {
+  height: 4rem;
+  width: 4rem;
+  margin: 0 1rem 0 0;
+}
+.content .article .title img {
+  height: 6rem;
+  width: 6rem;
+  margin: 0 1rem 0 0;
+}
+.content .article .title h2 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+}
+.content .article p {
+  font-size: 1.5em;
+  margin: 0.75rem 0 0;
+}
+.content .article .video {
+  width: 48rem;
+  height: 27rem;
+}
+.content .article iframe {
+  margin: 1rem 0 0;
+}
+.content .article table tr td {
+  font-size: 1.5em;
+  padding: 0.25rem 0;
+}
+.content .article table tr td:nth-child(2) {
+  padding: 0.25rem 0 0.25rem 2rem;
+}
+.content .article h3 {
+  font-size: 1.5em;
+  margin: 1rem 0;
+}
+.content .article .gallery {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: row wrap;
+}
+.content .article .gallery img {
+  flex: 0 1 15%;
+  width: 15%;
+  margin: 0 1% 1% 0;
+  cursor: zoom-in;
+}
+.content .article .pictureShow {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(21, 66, 149, 0.6);
+  overflow: hidden;
+}
+.content .article .pictureShow .image {
+  width: 50%;
+  position: relative;
+  border: 0.2rem solid #fff;
+  border-radius: 10px;
+  box-shadow: 20px 27px 57px -18px rgba(0, 0, 0, 0.75);
+}
+.content .article .pictureShow .image img {
+  width: 100%;
+  border-radius: 10px;
+}
+.content .article .pictureShow .image #removePicButton {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  z-index: 3;
+}
+.content .article .pictureShow .image #removePicButton svg {
+  background: #154295;
+  border-radius: 50%;
+}
+.content .article .pictureShow .image #moveLeft {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  transition: 0.4s ease-in-out;
+  border-radius: 10px;
+}
+.content .article .pictureShow .image #moveLeft svg {
+  height: 5rem;
+  width: 5rem;
+}
+.content .article .pictureShow .image #moveLeft:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.content .article .pictureShow .image #moveRight {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  transition: 0.4s ease-in-out;
+  border-radius: 10px;
+}
+.content .article .pictureShow .image #moveRight svg {
+  height: 5rem;
+  width: 5rem;
+}
+.content .article .pictureShow .image #moveRight:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.content .article .pricing-table {
+  width: 100%;
+  margin: 0 0 1rem 0;
+}
+.content .article .pricing-table thead th {
+  font-size: 2em;
+  width: 30%;
+  text-align: center;
+  text-transform: uppercase;
+}
+.content .article .pricing-table thead th:nth-child(1) {
+  width: 40%;
+  text-align: start;
+}
+.content .article .pricing-table tbody th {
+  text-align: start;
+  font-size: 1.75em;
+  padding: 1rem 0 0;
+}
+.content .article .pricing-table tbody td {
+  text-align: center;
+}
+.content .article .pricing-table tbody td:nth-child(1) {
+  text-align: start;
+}
+.content .article .facebook {
+  width: 100%;
+  height: 20rem;
+}
+.content .pricing h3 {
+  margin: 0.25rem;
+}
+.content .pricing img {
+  height: 6rem;
+}
+.content .contacts h3 {
+  font-size: 1.5em;
+}
+.content .contacts .row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.5em;
+  margin: 1rem 0;
+}
+.content .contacts .row div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .contacts .row svg {
+  margin: 0 10px 0 0;
+}
+.content .contacts .row:nth-child(2) {
+  margin: 1.5rem 0 1rem;
+}
+.content .contacts .row:nth-child(3) {
+  margin: 1rem 0 2rem;
+}
+
+/*****************************************************************/
+/**************************************************************************/
+footer {
+  width: 75%;
+  margin: 0 auto;
+  background: #154295;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+}
+footer h2 {
+  font-size: 2.5em;
+}
+footer h3 {
+  font-size: 1.5em;
+}
+footer .address h2, footer .address h3 {
+  text-align: end;
+}
+footer img {
+  height: 5rem;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/**************************************************************************/
+/**************************************************************************/
+/*/ Tablet setup /*/
+/**************************************************************************/
+@media only screen and (max-width: 1100px) {
+  .content .contact-bar {
+    flex-flow: column wrap;
+    height: auto;
+    padding: 0.5rem 0;
+  }
+  .content .article .video {
+    width: 24rem;
+    height: 13.5rem;
+  }
+  .content .article .gallery img {
+    width: 22%;
+    flex: 0 0 22%;
+    margin: 1.5%;
+  }
+  .content .article .pricing-table thead th {
+    font-size: 1.25em;
+  }
+  .content .article .pricing-table tbody tr th {
+    font-size: 1.1em;
+  }
+  .content .article .pricing-table tbody tr td {
+    font-size: 1em;
+  }
+  .content .article .pricing-table tbody tr td .time {
+    display: none;
+  }
+  .content .article .pricing-table tbody tr td:nth-child(2) {
+    padding: 0;
+  }
+  .content .article .contacts h3 {
+    font-size: 1.25em;
+  }
+  .content .article .contacts .row span {
+    font-size: 0.75em;
+  }
+  .content .pricing h3 {
+    font-size: 1em;
+  }
+  .content .pricing img {
+    height: 4rem;
+  }
+
+  footer {
+    padding: 2rem 2rem 7.5rem 2rem;
+  }
+  footer div h2 {
+    font-size: 1.25em;
+  }
+  footer div h3 {
+    font-size: 1em;
+  }
+  footer img {
+    height: 5rem;
+  }
+}
+/**************************************************************************/
+/*/ Mobile setup /*/
+/**************************************************************************/
+@media only screen and (max-width: 610px) {
+  .content {
+    width: 100%;
+  }
+  .content .contact-bar div {
+    flex: 0 1 100%;
+  }
+  .content .contact-bar div svg {
+    height: 1rem;
+    width: 1rem;
+  }
+  .content .contact-bar div h4 {
+    font-size: 0.75em;
+  }
+  .content .select-language h2 {
+    font-size: 1.5em;
+  }
+  .content .select-language .buttons {
+    margin: 1rem 0;
+  }
+  .content h1.title {
+    font-size: 1.45em;
+  }
+  .content h2.title {
+    font-size: 1.2em;
+  }
+  .content .article .title h2 {
+    font-size: 1.5em;
+  }
+  .content .article .title svg {
+    height: 3rem;
+    width: 3rem;
+  }
+  .content .article p {
+    font-size: 1.25em;
+  }
+  .content .article .timetable tr {
+    display: flex;
+    flex-flow: column wrap;
+  }
+  .content .article .timetable tr td {
+    font-size: 1.25em;
+  }
+  .content .article .timetable tr td:nth-child(2) {
+    padding: 0;
+  }
+  .content .article .video {
+    width: 16rem;
+    height: 9rem;
+  }
+  .content .article .gallery img {
+    width: 30%;
+    flex: 0 0 30%;
+    margin: 1.5%;
+  }
+  .content .article .pictureShow .image {
+    width: 90%;
+  }
+  .content .article .pricing-table thead th {
+    font-size: 0.9em;
+  }
+  .content .article .pricing-table tbody tr th {
+    font-size: 1em;
+  }
+  .content .article .pricing-table tbody tr td {
+    font-size: 0.8em;
+  }
+  .content .article .pricing-table tbody tr td .time {
+    display: none;
+  }
+  .content .article .pricing-table tbody tr td:nth-child(2) {
+    padding: 0;
+  }
+  .content .article .facebook {
+    width: 100%;
+  }
+  .content .article .contacts .row {
+    flex-flow: column wrap;
+    align-items: flex-start;
+    margin: 0;
+  }
+  .content .article .contacts .row div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.25rem 0;
+  }
+  .content .article .contacts .row div span {
+    font-size: 0.65em;
+  }
+  .content .article .contacts .row div svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 0 1rem 0 0 !important;
+  }
+  .content .article .contacts h3 {
+    font-size: 1em;
+  }
+  .content .pricing h3 {
+    font-size: 0.8em;
+  }
+  .content .pricing img {
+    height: 3rem;
+  }
+
+  footer {
+    flex-flow: column wrap;
+    width: 100%;
+    padding: 2rem 2rem 7.5rem 2rem;
+  }
+  footer div h2 {
+    font-size: 1.5em;
+  }
+  footer div h3 {
+    font-size: 1em;
+  }
+  footer div:nth-child(2) {
+    margin: 2rem 0 0;
+  }
+  footer .address h3 {
+    text-align: start;
+  }
+}
+/**************************************************************************//*# sourceMappingURL=style.css.map */
