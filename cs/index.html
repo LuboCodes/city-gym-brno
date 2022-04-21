@@ -22,40 +22,45 @@
         <img src="../img/background-image.jpg" alt="">
     </div>
     <!--------------------------------------------------------------------->
+    
+    
+    <!-- Navbar -->
+    <!--------------------------------------------------------------------->
+    <header>
+        <a id="nav-title" class="active" href="#title">Úvod</a>
+        <a id="nav-about-us" href="#about-us">O nás</a>
+        <a id="nav-place" href="#place">Kde nás najdete</a>
+        <a id="nav-timetable" href="#timetable">Otevírací doba</a>
+        <a id="nav-gallery" href="#gallery">Galerie</a>
+        <a id="nav-pricing" href="#pricing">Ceník</a>
+        <a id="nav-news" href="#news">Novinky</a>
 
+        
+        <div id="ham-button" onclick="ham()" class="ham">
+            <span class='number1'></span>
+            <span class='number2'></span>
+            <span class='number3'></span>
+        </div>
+    </header>
+    <!--------------------------------------------------------------------->
+    
+    <!-- Offcanvas -->
+    <!--------------------------------------------------------------------->
+    <div id="offcanvas">
+        <a onclick="ham()" href="#title">Úvod</a>
+        <a onclick="ham()" href="#about-us">O nás</a>
+        <a onclick="ham()" href="#place">Kde nás najdete</a>
+        <a onclick="ham()" href="#timetable">Otevírací doba</a>
+        <a onclick="ham()" href="#gallery">Galerie</a>
+        <a onclick="ham()" href="#pricing">Ceník</a>
+        <a onclick="ham()" href="#news">Novinky</a>
+    </div>
+    <!--------------------------------------------------------------------->
 
     <!--| Content |-->
     <!--------------------------------------------------------------------->
-    <div class="content">
+    <div id="title" class="content">
         
-        <!-- Contact Bar -->
-        <div class="contact-bar">
-
-            <!-- Timetable -->
-            <div class="timetable">
-
-                <!-- Icon of clock -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-
-                <!-- Text with time -->
-                <h4>PO - PÁ: 6:30 - 22:00 | SO - NE: 8:00 - 20:00</h4>
-            </div>
-
-            <!-- Place -->
-            <div class="place">
-                <!-- Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-
-                <!-- Text with address -->
-                <h4>Běhounská 2/22, Brno střed</h4>
-            </div>
-        </div>
-
         <!-- Title Image -->
         <div class="title-image">
             <img src="../img/title-image.jpg" alt="">
@@ -89,13 +94,13 @@
 
         <!-- Title text -->
         <!-------------------------------------------------------->
-        <h1 class="title">Vítejte na našich stránkách City Gym Brno</h1>
-        <h2 class="title">Největší posilovny v centru</h2>
+        <h1 class="title">Vítejte na našich stránkách City Gym</h1>
+        <h2 class="title">Posilovna Brno</h2>
         <!-------------------------------------------------------->
 
         <!-- About us -->
         <!-------------------------------------------------------->
-        <div class="article">
+        <div id="about-us" class="article">
             <!-- Title -->
             <div class="title">
                 <!-- Icon -->
@@ -117,7 +122,7 @@
 
         <!-- Address -->
         <!-------------------------------------------------------->
-        <div class="article">
+        <div id="place" class="article">
             <!-- Title -->
             <div class="title">
                 <!-- Icon -->
@@ -161,7 +166,7 @@
 
         <!-- Timetable -->
         <!-------------------------------------------------------->
-        <div class="article">
+        <div id="timetable" class="article">
             <!-- Title -->
             <div class="title">
                 <!-- Icon -->
@@ -188,7 +193,7 @@
 
         <!-- Gym Tour -->
         <!-------------------------------------------------------->
-        <div class="article">
+        <div id="gallery" class="article">
             <div class="title">
                 <!-- Icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -331,7 +336,7 @@
 
         <!-- Pricing -->
         <!-------------------------------------------------------->
-        <div class="article pricing">
+        <div id="pricing" class="article pricing">
             <!-- Title -->
             <!---------------------------------------------->
             <div class="title" style="margin: 0 0 1rem 0;">
@@ -431,7 +436,7 @@
 
         <!-- News -->
         <!-------------------------------------------------------->
-        <div class="article">
+        <div id="news" class="article">
 
             <!-- Title -->
             <!---------------------------------------------->
@@ -476,7 +481,6 @@
             <!------------------------------------------------------------------------------>
             <div class="contacts">
 
-                <h3>Provozovatel: Lubomír Coufal</h3>
                 <!-- Phone and Mail -->
                 <!------------------------------------------------------------>
                 <span class="row">
@@ -544,37 +548,33 @@
                 </span>
                 <!------------------------------------------------------------>
 
-                <!-- Enterpreneur information -->
-                <!------------------------------------------------------------>
-                <h3>IČO: 74275950</h3>
-                <h3>Sídlo: Sirotkova 908/1d Brno 61600  </h3>
-                <h3>Evidován v ŽR u MMB </h3>
-                <!------------------------------------------------------------>
+                <!-- Address -->
+                <span class="row">
+                    <!-- Address of the gym -->
+                    <div>
+                        <!-- Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+
+                        <!-- Address -->
+                        <span><a href="https://goo.gl/maps/iWAX8VWKmzde22W96">Běhounská 22, 602 00 Brno-střed</a></span>
+                    </div>
+                </span>
             </div>
 
         </div>
         <!----------------------------------------------------------------------------------------------->
     </div>
     <!--------------------------------------------------------------------->
-
-    <!--| Footer |-->
+    
+    <!-- Enterpreneur info -->
     <!---------------------------------------------------------------------->
-    <footer>
-        <!-- Timetable -->
-        <div clas="timetable">
-            <h2>Máme otevřeno</h2>
-            <h3>Pondělí - Pátek: 6:30 - 22:00</h3>
-            <h3>Sobota - Neděle: 8:00 - 20:00</h3>
-        </div>
-        <!-- Address -->
-        <div class="address">
-            <h2>Navštivte nás</h2>
-            <h3>Běhounská 2/22,</h3>
-            <h3>Brno-střed,</h3>
-            <h3>602 00</h3>
-        </div>
-        <img src="../img/logo.png" alt="">
-    </footer>
+    <div class="info-bar">
+        <span>Provozovatel: Lubomír Coufal | IČO: 74275950 | Sídlo: Sirotkova 908/1d Brno 61600 | Evidován v ŽR u MMB</span>
+        <span>Webové stránky vytvořil <a href="">LuboCodes</a></span>
+    </div>
     <!---------------------------------------------------------------------->
 
     <!-- jQuery -->
@@ -585,5 +585,7 @@
 
     <!-- JS -->
     <script src="../js/script.js"></script>
+    <script src="../js/ham.js"></script>
+    <script src="../js/navigation-update.js"></script>
 </body>
 </html>
