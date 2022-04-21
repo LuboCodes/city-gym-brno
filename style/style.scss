@@ -104,30 +104,32 @@ html {
 .background-image {
     width: 100%;
     height: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     position: fixed;
     top: 0;
-    display: inline-block;
+    
     z-index: -1;
 
     img {
         width: 100%;
-        height: 100vh;
-        filter: blur(5px);
+        min-height: 100vh;
+        // filter: blur(5px);
     }
 
-    &::after {
-        content: "";
-        background: #154295;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        opacity: 0.6;
-    }
+    // &::after {
+    //     content: "";
+    //     background: #154295;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     bottom: 0;
+    //     right: 0;
+    //     opacity: 0.6;
+    // }
 }
 /******************************************************************/
 
@@ -144,7 +146,7 @@ header {
     position: sticky;
     top: 0;
     left: 0;
-    width: 75%;
+    width: 72.5%;
     margin: 0 auto;
     box-shadow: 0 5px 10px #000;
     z-index: 10;
@@ -270,9 +272,9 @@ header {
 // Content
 /*****************************************************************/
 .content {
-    width: 75%;
+    width: 72.5%;
     margin: 0 auto;
-    background: rgba($color: #2a2a2a, $alpha: 0.7);
+    background: rgba($color: #000, $alpha: 0.1);
     padding: 0 5%;
     overflow: hidden;
 
@@ -721,6 +723,15 @@ header {
 /*/ Mobile setup /*/
 /**************************************************************************/
 @media only screen and (max-width: 610px) {
+    .background-image {
+        width: 150%;
+        img {
+            width: 150%;
+            position: relative;
+            transform: translateX(-15%);
+        }
+    }
+
     header {
         width: 100%;
 
